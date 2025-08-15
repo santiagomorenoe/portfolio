@@ -1,0 +1,7 @@
+https://blocks.mvp-subha.me/docs/mainsections/testimonials
+https://magicui.design/docs/components/text-reveal
+https://blocks.mvp-subha.me/docs/mainsections/about
+https://blocks.mvp-subha.me/docs/mainsections/about
+https://blocks.mvp-subha.me/docs/mainsections/faq
+https://blocks.mvp-subha.me/docs/required/logo-cloud
+https://blocks.mvp-subha.me/docs/basic/modals
