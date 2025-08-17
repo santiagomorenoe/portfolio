@@ -1,4 +1,7 @@
+"use client"
+
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 
 export default function Page() {
 
@@ -7,13 +10,21 @@ export default function Page() {
   return (
     <div className="w-screen mt-12 pt-32 overflow-hidden" id="services">
       <div className="mx-auto w-screen max-w-2xl">
-        <div className="text-center">
-        <h1 className="bg-gradient-to-r from-foreground/80 via-foreground to-foreground/80 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl py-2">
+        <div className="text-center px-4">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ type: 'spring' as const, damping: 25 }}
+          className="bg-gradient-to-r from-foreground/80 via-foreground to-foreground/80 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl py-2">
             {t("title")}
-          </h1>
-          <p className="text-muted-foreground mt-3 text-xl">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: 'spring' as const, damping: 25, delay: 0.2 }}
+            className="text-muted-foreground mt-3 text-xl">
             {t("description")}
-          </p>
+          </motion.p>
         </div>
 
         <div className="mt-14 grid grid-cols-5">

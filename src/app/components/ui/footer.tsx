@@ -15,7 +15,7 @@ export default function FooterGlow() {
     setIsDialogOpen(true);
   };
   return (
-    <footer id="contact" className="relative z-10 mt-8 w-full overflow-hidden pt-16 pb-8">
+    <footer id="contact" className="relative z-10 mt-8 w-full overflow-hidden pt-16 pb-8 px-4 md:px-0">
       <style jsx global>{`
         .glass {
           backdrop-filter: blur(3px) saturate(180%);

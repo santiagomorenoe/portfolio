@@ -91,7 +91,9 @@
     },
     "projects": {
       "title": "Proyectos",
-      "descriptions": ["Recreé el sitio web de Apple iPhone 15 Pro, combinando animaciones GSAP y efectos 3D de Three.js.", "Desarrollé una aplicación de entrega de comida full stack usando React Native, Expo y TypeScript.", "Desarrollé un traductor AI usando React, Next.js, JavaScript, Gemini API y Tailwind CSS.", "Desarrollé una landing page para mostrar mis habilidades de diseño ayudando a algunas empresas a crear su propio sitio web."]
+      "descriptions": ["Recreé el sitio web de Apple iPhone 15 Pro, combinando animaciones GSAP y efectos 3D de Three.js.", "Desarrollé una aplicación de entrega de comida full stack usando React Native, Expo y TypeScript.", "Desarrollé un traductor AI usando React, Next.js, JavaScript, Gemini API y Tailwind CSS.", "Desarrollé una landing page para mostrar mis habilidades de diseño ayudando a algunas empresas a crear su propio sitio web."],
+      "checkLive": "Ver",
+      "comingSoon": "Próximamente"
     },
     "contact": {
       "title": "Desarrollado por Santi Moreno, desarrollador de software, estudiante de ingeniería en IA y fundador de Syntora.",
