@@ -131,7 +131,7 @@ export default function BentoGrid1() {
   }));
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12">
+    <div className="mx-auto max-w-7xl px-4 py-12">
       <div
         className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-6"
       >

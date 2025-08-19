@@ -46,8 +46,6 @@ export default function AboutUs1() {
 
   const missionRef = useRef(null);
   const valuesRef = useRef(null);
-
-  const missionInView = useInView(missionRef, { once: true, amount: 0.3 });
   const valuesInView = useInView(valuesRef, { once: true, amount: 0.3 });
 
   const variants = {
@@ -55,7 +53,7 @@ export default function AboutUs1() {
     whileInView: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { type: 'spring' as const, damping: 25, delay: i * 0.2 },
+      transition: { type: 'spring' as const, damping: 25, delay: i * 0.35 },
     }),
   };
 
@@ -71,37 +69,36 @@ export default function AboutUs1() {
         >
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.55 } }}
             transition={{ type: 'spring' as const, damping: 25 }}
-            className="bg-gradient-to-r from-foreground/80 via-foreground to-foreground/80 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl">
+            className="bg-gradient-to-r from-foreground/80 via-foreground to-foreground/80 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl pb-2">
             {t("title")}
           </motion.h1>
         </motion.div>
 
         {/* Mission & Vision Section */}
-        <div ref={missionRef} className="relative mx-auto mb-24 max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div ref={missionRef} className="relative mx-auto mb-24 max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
-              className="relative z-10 gap-12 rounded-2xl"
+              className="relative z-10 rounded-2xl"
               key={index}
               style={{
-                background: "radial-gradient(circle, #ffffff1a 0%, #1e00001a 60%, #000 100%)",
+                background: "",
               }} 
             >
               <div
-                className="group border-border/40 relative block overflow-hidden rounded-2xl border bg-gradient-to-br p-10 backdrop-blur-3xl"
+                className="group border-border/40 relative block overflow-hidden rounded-2xl border bg-gradient-to-br px-10 py-8 backdrop-blur-3xl"
               >
                 <BorderBeam
                   duration={8}
                   size={300}
                   className="via-primary/40 from-transparent to-transparent"
                 />
-                <div className="relative w-full rounded-xl overflow-hidden">
+                <div className="relative w-full h-[400px] rounded-xl overflow-hidden">
                   <Image
                     src={project?.image || ""}
                     alt={project?.name || ""}
-                    width={300}
-                    height={400}
+                    fill
                     className="object-cover hover:scale-105 transition-all duration-300"
                   />
                 </div>

@@ -13,15 +13,15 @@ export default function Page() {
         <div className="text-center px-4">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.55} }}
           transition={{ type: 'spring' as const, damping: 25 }}
           className="bg-gradient-to-r from-foreground/80 via-foreground to-foreground/80 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl py-2">
             {t("title")}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ type: 'spring' as const, damping: 25, delay: 0.2 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.8 } }}
+            transition={{ type: 'spring' as const, damping: 25 }}
             className="text-muted-foreground mt-3 text-xl">
             {t("description")}
           </motion.p>

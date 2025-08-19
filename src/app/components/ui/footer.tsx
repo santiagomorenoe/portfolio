@@ -40,7 +40,7 @@ export default function FooterGlow() {
         <div className="absolute top-32 left-1/4 h-52 w-52 rounded-full bg-primary/20 blur-3xl"></div>
         <div className="absolute right-1/4 bottom-24 h-60 w-60 rounded-full bg-primary/20 blur-3xl"></div>
       </div>
-      <div className="glass relative mx-auto flex max-w-6xl flex-col items-center gap-8 rounded-2xl px-6 py-10 md:flex-row md:items-start md:justify-between md:gap-12">
+      <div className="glass relative mx-auto flex max-w-7xl flex-col items-center gap-8 rounded-2xl px-6 py-10 md:flex-row md:items-start md:justify-between md:gap-12">
         <div className="flex flex-col items-center md:items-start">
           <a href="https://santis-personal-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer" className="mb-4 hover:scale-105 transition-all duration-300">
             <img src="/Vector.svg" alt="logo" className="w-[64px] h-[64px] object-contain" />

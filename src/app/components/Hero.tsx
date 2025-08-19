@@ -1,20 +1,27 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useTransition } from "react";
+import { motion, Variants } from "framer-motion";
 import { ArrowRight, ChevronRight, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AuroraText } from "@/app/components/ui/aurora-text";
 import { useTranslations } from "next-intl";
 import { AnimatedShinyText } from "@/app/components/ui/animate-shiny-text";
 import { MacbookScroll } from "./ui/macbook-scroll";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 export default function GradientHero() {
   const t = useTranslations("home");
-  const pathname = usePathname();
-  const locale = pathname.split("/")[1];
+
+ 
+  const titleVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.6 } }
+  }
+
+  const descriptionVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 1.2 } }
+  }
 
   return (
     <div
@@ -47,9 +54,9 @@ export default function GradientHero() {
 
           {/* Heading */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            initial="hidden"
+            whileInView="visible"
+            variants={titleVariants}
             className="from-primary/10 via-foreground/85 to-foreground/50 bg-gradient-to-tl bg-clip-text text-center text-3xl tracking-tighter text-balance text-transparent md:text-6xl lg:text-7xl font-primary font-bold flex items-center justify-center gap-2"
           >
             {t("title.first")}
@@ -58,9 +65,9 @@ export default function GradientHero() {
 
           {/* Description */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial="hidden"
+            whileInView="visible"
+            variants={descriptionVariants}
             className="text-muted-foreground/80 mx-auto mt-6 max-w-2xl text-center text-base"
           >
             {t("description")} <br />
@@ -74,7 +81,7 @@ export default function GradientHero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 1.62 }}
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <Button
