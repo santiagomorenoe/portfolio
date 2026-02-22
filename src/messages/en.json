@@ -96,7 +96,7 @@
     "form": {
       "updates": "updates",
       "product": "product",
-      "enterprise": "enterprise",
+      "enterprise": "about me",
       "contact": "contact"
     }
   },
@@ -146,6 +146,6 @@
     ],
     "checkLive": "View live",
     "checkCode": "View code",
-    "comingSoon": "In progress"
+    "comingSoon": "Preparing demo..."
   }
 }
