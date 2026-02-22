@@ -82,6 +82,14 @@ export default function FooterDialog({ isOpen, onClose, dialogType }: FooterDial
                     Fases iniciales de desarrollo del proyecto.
                   </p>
                 </div>
+                <div className="border-l-2 border-primary pl-4">
+                  <h4 className="font-semibold text-primary">
+                    v1.0.1 - Diciembre 2025
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    Actualizacion de proyectos
+                  </p>
+                </div>
               </div>
             </div>
           ),
@@ -89,28 +97,24 @@ export default function FooterDialog({ isOpen, onClose, dialogType }: FooterDial
 
       case "acerca-de":
         return {
-          title: "Acerca de Syntora",
-          description: "Conoce más sobre nuestra empresa y misión",
+          title: "Acerca de mi",
+          description: "Conoce más sobre mi y mi misión",
           content: (
             <div className="space-y-4">
               <p className="text-sm text-muted-foreground">
-                Syntora es una empresa innovadora fundada por Santi Moreno,
-                especializada en el desarrollo de soluciones de inteligencia
-                artificial y software de alta calidad.
+                Santi Moreno, igeniero de software, estudiante de ingeniería en IA y fundador de Syntora.
               </p>
               <div className="space-y-3">
-                <h4 className="font-semibold">Nuestra Misión</h4>
+                <h4 className="font-semibold">Mi misión</h4>
                 <p className="text-sm text-muted-foreground">
-                  Democratizar el acceso a la tecnología de traducción
-                  inteligente, haciendo que la comunicación global sea más
-                  accesible y precisa para todos.
+                  Crear soluciones de software y IA que sean accesibles y útiles para todos, desde pequeño tuve la oportunidad de aprender y crear soluciones para mi propio negocio. Ahora quisiera crecer en el mundo empresarial del software.
                 </p>
-                <h4 className="font-semibold">Nuestros Valores</h4>
+                <h4 className="font-semibold">Mis valores</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Innovación constante en software e IA</li>
-                  <li>• Calidad y precisión en cada traducción</li>
-                  <li>• Accesibilidad para usuarios de todo el mundo</li>
-                  <li>• Privacidad y seguridad de datos</li>
+                  <li>• Respeto y empatía hacia los demás</li>
+                  <li>• Responsabilidad y compromiso con el trabajo</li>
+                  <li>• Innovación y creatividad en cada proyecto</li>
+                  <li>• Eficiencia y productividad en cada tarea</li>
                 </ul>
               </div>
             </div>

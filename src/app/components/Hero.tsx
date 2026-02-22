@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useTransition } from "react";
-import { motion, Variants } from "framer-motion";
-import { ArrowRight, ChevronRight, Linkedin } from "lucide-react";
+import React, { useState, useTransition } from "react";
+import { motion, AnimatePresence, Variants } from "framer-motion";
+import { ChevronRight, Linkedin, Mail, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AuroraText } from "@/app/components/ui/aurora-text";
 import { useTranslations } from "next-intl";
@@ -11,8 +11,15 @@ import { MacbookScroll } from "./ui/macbook-scroll";
 
 export default function GradientHero() {
   const t = useTranslations("home");
+  const [copied, setCopied] = useState(false);
 
- 
+  function handleCopyEmail() {
+    navigator.clipboard.writeText("morenoestradasantiago@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
+
+
   const titleVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.6 } }
@@ -71,10 +78,6 @@ export default function GradientHero() {
             className="text-muted-foreground/80 mx-auto mt-6 max-w-2xl text-center text-base"
           >
             {t("description")} <br />
-            {t("founder")}{" "}
-            <span className="text-foreground underline hover:text-primary/80 transition-all duration-300">
-              Santi Moreno
-            </span>
           </motion.p>
 
           {/* CTA Buttons */}
@@ -82,36 +85,72 @@ export default function GradientHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.62 }}
-            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+            className="mt-10 flex flex-col items-center justify-center gap-8 sm:flex-row"
           >
-            <Button
-              size="lg"
-              className="group bg-primary text-primary-foreground hover:shadow-primary/30 relative overflow-hidden rounded-full px-6 shadow-lg transition-all duration-300 hover:scale-105 hover:cursor-pointer"
-              onClick={() => {
-                window.open("/cv.pdf", "_blank");
-              }}
-            >
-              <span className="relative z-10 flex items-center">
-                {t("cta.primary")}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </span>
-              <span className="from-primary via-primary/90 to-primary/80 absolute inset-0 z-0 bg-gradient-to-r opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
-            </Button>
 
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-border bg-background/50 flex items-center gap-2 rounded-full backdrop-blur-sm hover:scale-105 hover:cursor-pointer"
-              onClick={() => {
-                window.open("https://www.linkedin.com/in/santimdev/", "_blank");
-              }}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.3 }}
             >
-              <Linkedin className="h-4 w-4" />
-              {t("cta.secondary")}
-            </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-border bg-background/50 flex items-center gap-2 rounded-full backdrop-blur-sm hover:scale-105 hover:cursor-pointer"
+                onClick={() => {
+                  window.open("https://www.linkedin.com/in/santimdev/", "_blank");
+                }}
+              >
+                <Linkedin className="h-4 w-4" />
+                {t("cta.secondary")}
+              </Button>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-border bg-background/50 flex items-center gap-2 rounded-full backdrop-blur-sm hover:scale-105 hover:cursor-pointer overflow-hidden min-w-[160px]"
+                onClick={handleCopyEmail}
+              >
+                <AnimatePresence mode="wait" initial={false}>
+                  {copied ? (
+                    <motion.span
+                      key="copied"
+                      className="flex items-center gap-2"
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Check className="h-4 w-4 text-green-500" />
+                      <span className="text-green-500">{t("cta.copied")}</span>
+                    </motion.span>
+                  ) : (
+                    <motion.span
+                      key="email"
+                      className="flex items-center gap-2"
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Mail className="h-4 w-4" />
+                      {t("cta.email")}
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </Button>
+            </motion.div>
           </motion.div>
 
           <MacbookScroll src="/syntora.jpg" />
+
+          <div className="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-background to-transparent"></div>
         </div>
       </div>
     </div>

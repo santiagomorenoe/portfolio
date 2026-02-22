@@ -9,7 +9,7 @@
     "navigation": {
       "home": "Home",
       "services": "Services",
-      "products": "Products",
+      "products": "Projects",
       "contact": "Contact",
       "testimonials": "Testimonials",
       "pricing": "Pricing"
@@ -33,7 +33,9 @@
     "founder": "Developed by",
     "cta": {
       "primary": "Download my CV",
-      "secondary": "My Linkedin"
+      "secondary": "My Linkedin",
+      "email": "Copy email",
+      "copied": "Copied!"
     }
   },
   "bento": {
@@ -101,12 +103,49 @@
   "projects": {
     "title": "Our projects",
     "descriptions": [
-      "I recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects.",
-      "I developed a full stack food delivery app using React Native, Expo, and TypeScript.",
-      "I developed an AI-powered translator using React, Next.js, JavaScript, Gemini API & Tailwind CSS.",
-      "I developed a landing page to showcase my desing skills helping some businesses to create their own website."
+      {
+        "id": "1",
+        "description": "I recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects.",
+        "status": "Demo"
+      },
+      {
+        "id": "2",
+        "description": "I developed a full stack food delivery app using React Native, Expo, and TypeScript.",
+        "status": "Code"
+      },
+      {
+        "id": "3",
+        "description": "I developed an AI-powered translator using React, Next.js, JavaScript, Gemini API & Tailwind CSS.",
+        "status": "Demo"
+      },
+      {
+        "id": "4",
+        "description": "I developed a landing page to showcase my design skills helping some businesses to create their own website.",
+        "status": "Demo"
+      },
+      {
+        "id": "5",
+        "description": "I'm developing a job portal with React, Next.js, PostgreSQL, Kafka, Node.js, TypeScript, Redis and Docker.",
+        "status": "Working"
+      },
+      {
+        "id": "6",
+        "description": "I developed a social media app with PostgreSQL, Node.js, Google Cloud, Docker and TypeScript.",
+        "status": "Code"
+      },
+      {
+        "id": "7",
+        "description": "I developed a design-system with real-time data telemetry using Next.js, Node.js, MongoDB and TypeScript.",
+        "status": "Demo"
+      },
+      {
+        "id": "8",
+        "description": "I developed a website for Syntora using Next.js, Tailwind CSS and TypeScript.",
+        "status": "Demo"
+      }
     ],
     "checkLive": "View live",
-    "comingSoon": "Coming soon"
+    "checkCode": "View code",
+    "comingSoon": "In progress"
   }
 }

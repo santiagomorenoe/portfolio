@@ -66,7 +66,7 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="flex min-h-[100vh] md:min-h-[200vh] shrink-0 scale-[0.35] transform flex-col items-center justify-start pt-[500px] [perspective:800px] sm:scale-50 md:scale-100 md:py-20 -mt-[450px] md:mt-0"
+      className="flex min-h-[100vh] md:min-h-[100vh] shrink-0 scale-[0.35] transform flex-col items-center justify-start pt-[500px] [perspective:800px] sm:scale-50 md:scale-100 md:py-20 -mt-[450px] md:mt-0"
     >
       {/* Lid */}
       <Lid
@@ -127,16 +127,6 @@ export const Lid = ({
         }}
         className="relative h-[12rem] w-[32rem] rounded-2xl bg-[#010101] p-2"
       >
-        <div
-          style={{
-            boxShadow: "0px 2px 0px 2px #171717 inset",
-          }}
-          className="absolute inset-0 flex items-center justify-center rounded-lg bg-[#010101]"
-        >
-          <span className="text-white">
-            <img src="/Vector.svg" alt="aceternity logo" className="h-10 w-10" />
-          </span>
-        </div>
       </div>
       <motion.div
         style={{
@@ -147,13 +137,15 @@ export const Lid = ({
           transformStyle: "preserve-3d",
           transformOrigin: "top",
         }}
-        className="absolute inset-0 h-96 w-[32rem] rounded-2xl bg-[#010101] p-2"
+        className="absolute inset-0 h-96 w-[32rem] rounded-2xl p-2"
       >
-        <div className="absolute inset-0 rounded-lg bg-gradient-to-b from-[#010101] to-[#010101]" />
         <img
           src={src as string}
           alt="aceternity logo"
-          className="relative inset-0 h-full w-full rounded-lg object-cover object-left-top"
+          className="relative inset-0 h-full w-full object-contain rounded-2xl"
+          style={{
+            maskImage: "linear-gradient(black 80%, transparent)",
+          }}
         />
       </motion.div>
     </div>

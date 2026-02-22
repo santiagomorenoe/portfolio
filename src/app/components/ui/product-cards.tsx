@@ -16,7 +16,10 @@ import {
   Rocket,
   Target,
   ExternalLink,
+  Github,
+  LoaderCircle,
 } from "lucide-react";
+import type { ProjectStatus } from "@/index";
 
 interface AboutUsProps {
   title?: string;
@@ -40,6 +43,94 @@ const iconComponents = {
   Rocket: Rocket,
   Target: Target,
 };
+
+function ProjectStatusButton({
+  status,
+  link,
+  t,
+}: {
+  status: ProjectStatus;
+  link: string;
+  t: ReturnType<typeof useTranslations<"projects">>;
+}) {
+  if (status === "Working") {
+    return (
+      <div className="flex flex-row justify-center items-center bg-muted rounded-lg p-2 opacity-60 cursor-not-allowed">
+        <motion.p
+          initial={{ opacity: 0, x: -10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ type: "spring" as const, damping: 25 }}
+          className="text-xs md:text-sm text-muted-foreground"
+        >
+          {t("comingSoon")}
+        </motion.p>
+        <motion.span
+          initial={{ opacity: 0, x: -10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ type: "spring" as const, damping: 25 }}
+        >
+          <LoaderCircle className="ms-2 animate-spin" size={14} color="var(--color-muted-foreground)" />
+        </motion.span>
+      </div>
+    );
+  }
+
+  if (status === "Code") {
+    return (
+      <div className="flex flex-row justify-center items-center bg-primary rounded-lg p-2 hover:scale-105 transition-all duration-300">
+        <a
+          href={link || "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center"
+        >
+          <motion.p
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ type: "spring" as const, damping: 25 }}
+            className="text-xs md:text-sm text-white"
+          >
+            {t("checkCode")}
+          </motion.p>
+          <motion.span
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ type: "spring" as const, damping: 25 }}
+          >
+            <Github className="ms-2" size={16} color="var(--color-white)" />
+          </motion.span>
+        </a>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex flex-row justify-center items-center bg-primary rounded-lg p-2 hover:scale-105 transition-all duration-300">
+      <a
+        href={link || "#"}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center"
+      >
+        <motion.p
+          initial={{ opacity: 0, x: -10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ type: "spring" as const, damping: 25 }}
+          className="text-xs md:text-sm text-white"
+        >
+          {t("checkLive")}
+        </motion.p>
+        <motion.span
+          initial={{ opacity: 0, x: -10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ type: "spring" as const, damping: 25 }}
+        >
+          <ExternalLink className="ms-2" size={16} color="var(--color-white)" />
+        </motion.span>
+      </a>
+    </div>
+  );
+}
 
 export default function AboutUs1() {
   const t = useTranslations("projects");
@@ -84,7 +175,7 @@ export default function AboutUs1() {
               key={index}
               style={{
                 background: "",
-              }} 
+              }}
             >
               <div
                 className="group border-border/40 relative block overflow-hidden rounded-2xl border bg-gradient-to-br px-10 py-8 backdrop-blur-3xl"
@@ -117,66 +208,33 @@ export default function AboutUs1() {
                     variants={variants}
                     custom={index}
                     className="text-muted-foreground text-lg leading-relaxed">
-                    {t("descriptions." + index)}
+                    {t(`descriptions.${index}.description`)}
                   </motion.p>
                 </div>
                 <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center">
-                  {project?.tags.map((icon, index) => (
-                    <div
-                      key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                    >
-                      <motion.img
-                        src={project?.tags[index] || ""}
-                        alt="icon5"
-                        className="p-2 object-contain backdrop-grayscale"
-                        width={32}
-                        height={32}
-                        initial="hidden"
-                        whileInView="whileInView"
-                        variants={variants}
-                        custom={index}
-                      />
-                    </div>
-                  ))}
-                </div>
+                  <div className="flex items-center">
+                    {project?.tags.map((icon, index) => (
+                      <div
+                        key={index}
+                        className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                      >
+                        <motion.img
+                          src={project?.tags[index] || ""}
+                          alt="icon5"
+                          className="p-2 object-contain backdrop-grayscale"
+                          width={32}
+                          height={32}
+                          initial="hidden"
+                          whileInView="whileInView"
+                          variants={variants}
+                          custom={index}
+                        />
+                      </div>
+                    ))}
+                  </div>
 
-                {index == 1 ? (
-                  <div className="flex flex-row justify-center items-center bg-muted rounded-lg p-2 hover:scale-105 transition-all duration-300">
-                    <motion.p
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ type: 'spring' as const, damping: 25 }}
-                      className="cursor-not-allowed text-xs md:text-sm text-muted-foreground">
-                      {t("comingSoon")}
-                    </motion.p>
-                  </div>
-                ) : (
-                  <div className="flex flex-row justify-center items-center bg-primary rounded-lg p-2 hover:scale-105 transition-all duration-300">
-                    <a
-                      href={project?.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <motion.p
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ type: 'spring' as const, damping: 25 }}
-                        className="text-xs md:text-sm text-foreground">
-                        {t("checkLive")}
-                      </motion.p>
-                    </a>
-                    <motion.span
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ type: 'spring' as const, damping: 25 }}
-                    >
-                      <ExternalLink className="ms-3" size={16} color="var(--color-foreground)" />
-                    </motion.span>
-                  </div>
-                )}
-              </div>
+                  <ProjectStatusButton status={project.status as ProjectStatus} link={project.link} t={t} />
+                </div>
               </div>
             </div>
           ))}

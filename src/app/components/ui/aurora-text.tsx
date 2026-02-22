@@ -13,13 +13,12 @@ export const AuroraText = memo(
   ({
     children,
     className = "",
-    colors = ["#FF0059", "#000000", "#61DAFB"],
+    colors = ["#1d3a81", "#cccccc", "#1d3a81"],
     speed = 1,
   }: AuroraTextProps) => {
     const gradientStyle = {
-      backgroundImage: `linear-gradient(135deg, ${colors.join(", ")}, ${
-        colors[0]
-      })`,
+      backgroundImage: `linear-gradient(135deg, ${colors.join(", ")}, ${colors[0]
+        })`,
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
       animationDuration: `${10 / speed}s`,

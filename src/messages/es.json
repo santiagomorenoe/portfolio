@@ -1,107 +1,151 @@
 {
-    "common": {
-      "theme": {
-        "light": "Claro",
-        "dark": "Oscuro", 
-        "system": "Sistema",
-        "toggleTheme": "Cambiar tema"
-      },
-      "navigation": {
-        "home": "Inicio",
-        "services": "Servicios",
-        "products": "Productos",
-        "contact": "Contacto",
-        "testimonials": "Testimonios",
-        "pricing": "Precios"
-      },
-      "actions": {
-        "save": "Guardar",
-        "cancel": "Cancelar",
-        "delete": "Eliminar",
-        "edit": "Editar",
-        "create": "Crear",
-        "search": "Buscar"
-      }
+  "common": {
+    "theme": {
+      "light": "Claro",
+      "dark": "Oscuro",
+      "system": "Sistema",
+      "toggleTheme": "Cambiar tema"
     },
-    "home": {
-      "title": {
-        "first": "Bienvenido a",
-        "second": "Syntora"
-      },
-      "subtitle": "Despega con nuestras soluciones",
-      "description": "Creamos experiencias digitales excepcionales que impulsan el crecimiento de tu negocio",
-      "founder": "Desarrollado por",
-      "cta": {
-        "primary": "Descargar mi CV",
-        "secondary": "Mi Linkedin"
-      }
+    "navigation": {
+      "home": "Inicio",
+      "services": "Servicios",
+      "products": "Proyectos",
+      "contact": "Contacto",
+      "testimonials": "Testimonios",
+      "pricing": "Precios"
     },
-    "bento": {
-      "services": [
-        {
-          "title": "Desarrollo web",
-          "description": "Creamos aplicaciones web modernas y responsivas optimizadas para motores de búsqueda y experiencia del usuario.",
-          "link": "/services/web-development"
-        },
-        {
-          "title": "Desarrollo móvil",
-          "description": "Creamos aplicaciones móviles únicas y personalizadas para tus necesidades.",
-          "link": "/services/mobile-development"
-        },
-        {
-          "title": "Desarrollo de software personalizado",
-          "description": "Creamos soluciones de software personalizadas que se optimizan para el rendimiento y la escalabilidad. Podemos ayudarte con tus necesidades de negocio.",
-          "link": "/services/custom-software-development"
-        },
-        {
-          "title": "Desarrollo de IA",
-          "description": "Creamos soluciones de IA personalizadas que se optimizan para el rendimiento y la escalabilidad.",
-          "link": "Muy pronto"
-        },
-        {
-          "title": "Diseño UI/UX",
-          "description": "Creamos interfaces de usuario a medida para cualquiera de tus necesidades.",
-          "link": "/services/ui-ux-design"
-        },
-        {
-          "title": "Soporte y mantenimiento",
-          "description": "Ofrecemos soporte y mantenimiento continuo para tus soluciones de software para asegurar que siempre funcionen correctamente. También podemos ayudarte a mejorar tu sitio web.",
-          "link": "/services/support-and-maintenance"
-        }
-      ]
+    "actions": {
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "delete": "Eliminar",
+      "edit": "Editar",
+      "create": "Crear",
+      "search": "Buscar"
+    }
+  },
+  "home": {
+    "title": {
+      "first": "Bienvenido soy",
+      "second": "Santi Moreno"
     },
-    "tecnologies": {
-      "title": "De la mano de las mejores tecnologías.",
-      "description": "Nuestros servicios."
-    },
-    "services": {
-      "title": "Nuestros servicios",
-      "webDevelopment": {
+    "subtitle": "Disponible para trabajar",
+    "description": "Hola! Soy Santi Moreno, ingeniero de software, estudiante de ingeniería en IA y fundador de Syntora.",
+    "founder": "",
+    "cta": {
+      "primary": "Descarga mi CV",
+      "secondary": "Mi Linkedin",
+      "email": "Copiar email",
+      "copied": "¡Copiado!"
+    }
+  },
+  "bento": {
+    "services": [
+      {
         "title": "Desarrollo web",
-        "description": "Sitios web modernos y responsivos"
+        "description": "Creamos aplicaciones web modernas y responsivas optimizadas para motores de búsqueda y experiencia del usuario.",
+        "link": "/services/web-development"
       },
-      "digitalMarketing": {
-        "title": "Marketing digital",
-        "description": "Estrategias de marketing efectivas"
+      {
+        "title": "Desarrollo móvil",
+        "description": "Creamos aplicaciones móviles únicas y personalizadas para tus necesidades.",
+        "link": "/services/mobile-development"
       },
-      "seo": {
-        "title": "SEO",
-        "description": "Optimización para motores de búsqueda"
+      {
+        "title": "Desarrollo de software personalizado",
+        "description": "Creamos soluciones de software personalizadas que se optimizan para el rendimiento y la escalabilidad. Podemos ayudarte con tus necesidades de negocio.",
+        "link": "/services/custom-software-development"
+      },
+      {
+        "title": "Desarrollo de IA",
+        "description": "Creamos soluciones de IA personalizadas que se optimizan para el rendimiento y la escalabilidad.",
+        "link": "Muy pronto"
+      },
+      {
+        "title": "Diseño UI/UX",
+        "description": "Creamos interfaces de usuario a medida para cualquiera de tus necesidades.",
+        "link": "/services/ui-ux-design"
+      },
+      {
+        "title": "Soporte y mantenimiento",
+        "description": "Ofrecemos soporte y mantenimiento continuo para tus soluciones de software para asegurar que siempre funcionen correctamente. También podemos ayudarte a mejorar tu sitio web.",
+        "link": "/services/support-and-maintenance"
       }
+    ]
+  },
+  "tecnologies": {
+    "title": "De la mano de las mejores tecnologías.",
+    "description": "Construyendo soluciones de software e IA."
+  },
+  "services": {
+    "title": "Nuestros servicios",
+    "webDevelopment": {
+      "title": "Desarrollo web",
+      "description": "Sitios web modernos y responsivos"
     },
-    "projects": {
-      "title": "Proyectos",
-      "descriptions": ["Recreé el sitio web de Apple iPhone 15 Pro, combinando animaciones GSAP y efectos 3D de Three.js.", "Desarrollé una aplicación de entrega de comida full stack usando React Native, Expo y TypeScript.", "Desarrollé un traductor AI usando React, Next.js, JavaScript, Gemini API y Tailwind CSS.", "Desarrollé una landing page para mostrar mis habilidades de diseño ayudando a algunas empresas a crear su propio sitio web."],
-      "checkLive": "Ver",
-      "comingSoon": "Próximamente"
+    "digitalMarketing": {
+      "title": "Marketing digital",
+      "description": "Estrategias de marketing efectivas"
     },
-    "contact": {
-      "title": "Desarrollado por Santi Moreno, desarrollador de software, estudiante de ingeniería en IA y fundador de Syntora.",
-      "form": {
-        "updates": "actualizaciones",
-        "product": "producto",
-        "enterprise": "empresa",
-        "contact": "contacto"
+    "seo": {
+      "title": "SEO",
+      "description": "Optimización para motores de búsqueda"
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "descriptions": [
+      {
+        "id": "1",
+        "description": "Recreé el sitio web de Apple iPhone 15 Pro, combinando animaciones GSAP y efectos 3D de Three.js.",
+        "status": "Demo"
+      },
+      {
+        "id": "2",
+        "description": "Desarrollé una aplicación de entrega de comida full stack usando React Native, Expo y TypeScript.",
+        "status": "Code"
+      },
+      {
+        "id": "3",
+        "description": "Desarrollé un traductor AI usando React, Next.js, JavaScript, Gemini API y Tailwind CSS.",
+        "status": "Demo"
+      },
+      {
+        "id": "4",
+        "description": "Desarrollé una landing page para mostrar mis habilidades de diseño ayudando a algunas empresas a crear su propio sitio web.",
+        "status": "Demo"
+      },
+      {
+        "id": "5",
+        "description": "Estoy desarrollando un portal de empleo con React, Next.js, PostreSQL, Kafka, Node.js, TypeScript, Redis y Docker.",
+        "status": "Working"
+      },
+      {
+        "id": "6",
+        "description": "Desarrollé una aplicación social con PostreSQL, Node.js, Google Cloud, Docker y TypeScript.",
+        "status": "Code"
+      },
+      {
+        "id": "7",
+        "description": "Desarrollé un desing-system con telemetría de datos en tiempo real usando Next.js, Node.js, MongoDB y Typescript.",
+        "status": "Demo"
+      },
+      {
+        "id": "8",
+        "description": "Desarrollé un sitio web para Syntora usando Next.js, Tailwind CSS y TypeScript.",
+        "status": "Demo"
       }
+    ],
+    "checkLive": "Ver demo",
+    "checkCode": "Ver código",
+    "comingSoon": "Preparando demo..."
+  },
+  "contact": {
+    "title": "Desarrollado por Santi Moreno, desarrollador de software, estudiante de ingeniería en IA y fundador de Syntora.",
+    "form": {
+      "updates": "actualizaciones",
+      "product": "producto",
+      "enterprise": "sobre mi",
+      "contact": "contacto"
     }
   }
+}
