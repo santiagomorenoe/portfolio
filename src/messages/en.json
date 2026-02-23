@@ -25,11 +25,11 @@
   },
   "home": {
     "title": {
-      "first": "Welcome to",
-      "second": "Syntora"
+      "first": "I'm",
+      "second": "Santi Moreno"
     },
     "subtitle": "Open to work",
-    "description": "Hello! I'm Santi Moreno, software engineer, student of AI engineering and founder of Syntora.",
+    "description": "Software engineer, student of AI engineering and founder of Syntora.",
     "founder": "Developed by",
     "cta": {
       "primary": "Download my CV",

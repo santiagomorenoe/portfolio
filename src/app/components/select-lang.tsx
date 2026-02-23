@@ -3,10 +3,11 @@
 import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
 import { Button, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/app/components/ui";
-import { Languages } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
+import { isMobile } from './hooks/isMobile';
 
 const locales = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
+  { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'es', name: 'Español', flag: '🇪🇸' }
 ];
 
@@ -23,17 +24,19 @@ export function LanguageToggle() {
     router.push(`/${newLocale}${pathWithoutLocale}`);
   };
 
+  const isMobileDevice = isMobile();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="rounded-lg">
-          <Languages className="h-[1.2rem] w-[1.2rem]" />
-          <span className="sr-only">Cambiar idioma</span>
-        </Button>
+        <div className="rounded-lg flex items-center justify-center border border-input p-2 hover:bg-accent cursor-pointer">
+          {isMobileDevice ? currentLocale?.flag : currentLocale?.name}
+          <ChevronDown className="h-[1.2rem] w-[1.2rem]" />
+        </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="rounded-lg">
         {locales.map((loc) => (
-          <DropdownMenuItem 
+          <DropdownMenuItem
             key={loc.code}
             onClick={() => handleLocaleChange(loc.code)}
             className={locale === loc.code ? 'bg-accent' : ''}

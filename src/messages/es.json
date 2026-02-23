@@ -25,11 +25,11 @@
   },
   "home": {
     "title": {
-      "first": "Bienvenido soy",
+      "first": "Soy",
       "second": "Santi Moreno"
     },
     "subtitle": "Disponible para trabajar",
-    "description": "Hola! Soy Santi Moreno, ingeniero de software, estudiante de ingeniería en IA y fundador de Syntora.",
+    "description": "Ingeniero de software, estudiante de ingeniería en IA y fundador de Syntora.",
     "founder": "",
     "cta": {
       "primary": "Descarga mi CV",
