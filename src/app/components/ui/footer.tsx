@@ -8,6 +8,7 @@ export default function FooterGlow() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [dialogType, setDialogType] = useState('');
   const t = useTranslations("contact");
+  const t1 = useTranslations("home");
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, type: string) => {
     e.preventDefault();
@@ -41,11 +42,8 @@ export default function FooterGlow() {
       </div>
       <div className="glass relative mx-auto flex max-w-7xl flex-col items-center gap-8 rounded-2xl px-6 py-10 md:flex-row md:items-start md:justify-between md:gap-12">
         <div className="flex flex-col items-center md:items-start">
-          <a href="https://santis-personal-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer" className="mb-4 hover:scale-105 transition-all duration-300">
-            <img src="/Vector.svg" alt="logo" className="w-[64px] h-[64px] object-contain" />
-          </a>
-          <p className="text-foreground mb-6 max-w-xs text-center text-sm md:text-left">
-            Desarrollado por Santi Moreno, desarrollador de software, estudiante de ingeniería en IA y fundador de Syntora.
+          <p className="text-foreground/80 mb-6 max-w-xs text-center text-sm md:text-left">
+            {t1("description")}
           </p>
           <div className="mt-2 flex gap-3 text-primary">
             <a
